@@ -1,0 +1,55 @@
+//.....
+//Believe in yourself ,( try and try and then try ), You can do it
+#include<bits/stdc++.h>
+#define re return 0;
+#define ll long long
+#define PI  3.1415926535897932384626
+#define mod (1000000000+7)
+#define endl '\n'
+#define all(c) (c).begin(), (c).end()
+#define ull  unsigned long long
+#define sonik ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+// letters = "abcdefghijklmnopqrstuvwxyz";
+ll gcd(ll a,ll b){
+    if(b==0){
+        return a;
+    }
+    return gcd(b,a%b);
+}
+ll lcm(ll a,ll b){
+    return (a*b)/ gcd(a,b);
+}
+//__builtin_popcount() -> to count the number of one’s(set bits) in an integer.
+int main() {
+//freopen("lazy.in", "rt", stdin);
+//freopen("girls.in", "wt", stdout);
+    sonik
+ll x;
+    cin>>x;map<ll,ll>mp;
+    ll q=x;
+    vector<ll>v(x);ll mx=-1,mn=1000006;
+    for (int i = 0; i <x ; ++i) {
+        cin>>v[i];
+mn=min(mn,v[i]);
+mx= max(mx,v[i]);
+        mp[v[i]]++;
+    }
+    while(q>0){
+        for (int i = mn; i <=mx ; ++i) {
+            if(mp[i]){
+                cout<<i<<' ';
+                mp[i]--;
+                q--;
+            }
+        }
+        cout<<endl;
+    }
+ 
+ 
+ 
+    re
+}
+ 
+ 
+ 

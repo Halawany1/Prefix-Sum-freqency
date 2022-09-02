@@ -1,0 +1,67 @@
+//    ios_base::sync_with_stdio(false);
+//    cin.tie(NULL);
+#include <iostream>
+ 
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+bool cmp(pair<string ,ll>a,pair<string,ll>b){
+    if(a.second==b.second)return a.first<b.first;
+    else{
+        return a.second>b.second;
+    }
+}
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+//ll x,y,z;
+//cin>>x>>y>>z;
+//ll a[x][y];ll pre[x][y];
+//    for (int i = 0; i < x; ++i) {
+//        for (int j = 0; j <y ; ++j) {
+//            cin>>a[i][j];
+//            if(!i&&!j){
+//                pre[i][j]=a[i][j];
+//            }else{
+//                if(j==0){
+//                    pre[i][j]=pre[i-1][y-1]+a[i][j];
+//                }else {
+//                    pre[i][j] = pre[i][j - 1] + a[i][j];
+//                }
+//            }
+//        }
+//    }
+//    for (int i = 0; i <x ; ++i) {
+//        for (int j = 0; j <y ; ++j) {
+//            cout<<pre[i][j]<<' ';
+//        }
+//        cout<<endl;
+//    }
+//while(z--)
+//{
+//    ll g,h,l,r;
+//    cin>>g>>h>>l>>r;
+//
+//        cout << pre[l - 1][r - 1]-pre[g- 1][h - 1] << endl;
+//
+//}
+ll x,y;
+cin>>x>>y;
+vector<ll>v(x),a;map<ll,ll>mp;
+    for (int i = 0; i <x ; ++i) {
+cin>>v[i];
+if(!mp[v[i]]){
+    a.push_back(i+1);
+}
+mp[v[i]]++;
+    }
+    if(a.size()>=y){
+        cout<<"YES"<<endl;
+        for (int i = 0; i <y ; ++i) {
+            cout<<a[i]<<' ';
+        }
+    }else{
+        cout<<"NO";
+    }
+    return 0;
+}

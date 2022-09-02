@@ -1,0 +1,68 @@
+//.....
+//Believe in yourself ,( try and try and then try ), You can do it
+#include<bits/stdc++.h>
+#define re return 0;
+#define ll long long
+#define PI  3.1415926535897932384626
+#define mod (1000000000+7)
+#define endl '\n'
+#define all(c) (c).begin(), (c).end()
+#define ull  unsigned long long
+#define sonik ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+using namespace std;
+// letters = "abcdefghijklmnopqrstuvwxyz";
+ll gcd(ll a,ll b){
+    if(b==0){
+        return a;
+    }
+    return gcd(b,a%b);
+}
+ll lcm(ll a,ll b){
+    return (a*b)/ gcd(a,b);
+}
+struct v{
+    string s;
+    ll a,b,c,d;
+    ll sum;
+};
+bool cmp(v x,v y){
+    if(x.sum==y.sum){
+        return x.s<y.s;
+    }
+    return x.sum>y.sum;
+}
+//__builtin_popcount() -> to count the number of one’s(set bits) in an integer.
+int main() {
+//freopen("mex.in", "rt", stdin);
+//freopen("girls.in", "wt", stdout);
+    sonik
+    int n;
+    cin>>n;
+    while(n--){
+        ll x,y;
+        cin>>x>>y;
+        ll a[x+2]={0};
+        for (int i = 0; i <y ; ++i) {
+            ll q;
+            cin>>q;
+            for (int j = q; j <=x ; j+=q) {
+                if((j)%q==0){
+                    a[j]=1;
+                }
+            }
+        }
+        for (int i = 1; i <=x ; ++i) {
+            if(a[i]!=0){
+                a[i]=1;
+            }
+            cout<<a[i]<<' ';
+ 
+        }
+        cout<<endl;
+ 
+    }
+ 
+    re
+ 
+    re
+}
